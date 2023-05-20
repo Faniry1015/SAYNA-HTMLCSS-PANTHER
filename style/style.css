@@ -1,16 +1,11 @@
-/* Bordure d'aide à la vérification (for me) */
- /* * {
-    border: dotted 1px pink;
-} */
-
-/* Remise à zéro des paramètres */
+/* Remise à zéro des paramètres et Box sizing */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Définition des couleurs */
+/* Définition de la palette de couleur*/
  :root {
     --myWhite: #FFFFFF ;
     --mySoftPink : #F2CEF2 ;
@@ -44,41 +39,29 @@
 }
 
 html {
+    font-family: Cantarell;
+    font-size: 13px;   /* 16px trop grand */
+    text-align: justify;
     color: var(--myWhite);
-}
-
-a {
-    color: var(--myWhite);
-
-}
-
-a:hover, button:hover {
-    cursor: pointer;
 }
 
 h1 {
     font-family: Panthera;
-    font-size: 50px;  /* 68px trop grand */
+    font-size: 45px;  /* 68px trop grand */
     color: var(--mySoftViolet);
     margin: 10px 0;
 }
 
 h2 {
     font-family: Beyno;
-    font-size: 25px;  /* 32px trop grand */
+    font-size: 20px;  /* 32px trop grand */
     color: var(--mySoftViolet);
-}
-
-html {
-    font-family: Cantarell;
-    font-size: 14px;   /* 16px trop grand */
-    text-align: justify;
 }
 
 blockquote,
 blockquote p{
     font-family: Cantarell;
-    font-size: 14px;
+    font-size: 11px;
 }
 
 header li a {
@@ -86,28 +69,85 @@ header li a {
     font-size: 20px;
 }
 
-/* Background et marges */
-
-html {
-    width: 100%;
+/* Hyperliens */
+a {
+    color: var(--myWhite);
 }
 
-/* Appliquer un background color bleue car le radial-gradient agit bizzarement et au cas où certains navigateurs ne le supporte pas */
+a:hover, button:hover {
+    cursor: pointer;
+}
+
+/* Background et marges général*/
 body {
-    width: 100%;
-    min-width: 400px;
     background: url(../Assets/Illustrations_Logo/All_pages/arrière_plan.png) no-repeat;
     background-size: 100% 100%;
-}
-
-main {
-    width: 100%;
 }
 
 p {
     margin: 15px 0;
 }
 
+
+/* Icônes réseaux sociaux latéral gauche */
+.reseauxSoc {
+    position: fixed;
+    top: 0;
+    left : 3%;
+}
+
+.reseauxSoc table{
+    border-collapse: collapse;
+    border-left: var(--mySoftViolet) 2px solid;
+}
+
+.reseauxSoc__TraitSupDiv {
+    height:150px ;
+    border-right: var(--mySoftViolet) 2px solid;
+
+}
+
+.reseauxSoc__iconCont {
+    display: flex;
+    width: 15px;
+    height:175px ;
+}
+
+.reseauxSoc__iconCont__iconDiv {
+    position: relative;
+    left: 3px;
+    height:175px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.reseauxSoc__iconCont__iconDiv a:hover {
+    filter: invert(0) sepia(100%) saturate(0%) hue-rotate(3deg) brightness(100%) contrast(104%)
+}
+
+/* Animation slidein à l'ouverture de la page */
+
+@keyframes slidein {
+    from {
+        margin-right: 100%;
+        width: 0%;
+    }
+  
+    to {
+      margin-right: 0%;
+      width: 100%;
+    }
+  }
+
+p, img, ul, img, h1, h2 {
+    overflow: hidden;
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+
+  
 /* HEADER */
 header {
     margin: 25px 10%;
@@ -122,7 +162,11 @@ header {
     min-width: 150px;
 } 
 
-nav {
+.header__logoCont img:hover {
+    filter: invert(35%) sepia(16%) saturate(494%) hue-rotate(219deg) brightness(94%) contrast(91%);
+}
+
+.header__nav {
     width: 30%;
 }
 
@@ -137,64 +181,144 @@ nav {
 
 .header__nav li {
     list-style: none;
+    margin: 5px;
 }
 
 .header__nav a {
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
+}
+
+.header__nav a:hover {
+    text-decoration: underline;
+}
+
+.header__nav__currentPage,
+.header__nav__currentPage a{
+    color: var(--mySoftViolet);
+    text-decoration: underline;
 }
 
 
 /* MAIN */
 /* SECTION 1: Black Panther */
-
 .sec1BP {
-    margin: 0 10%;
-    display: flex;
-    align-items: center;
+    margin: 50px 0 20px 10%;
+}
+
+/* media queries */
+@media screen and (min-width: 700px) {
+    .sec1BP {
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 10%; 
+    }
+
+    .sec1BP__art {
+        width: 40%;
+    }
+
+    .sec1BP__fig__imgCont {
+        width: 60%;
+    }
 }
 
 .sec1BP__art {
-    width: 40%;
     margin-left: 15px
-}
-
-.sec1BP__fig__imgCont {
-    width: 60%;
 }
 
 .sec1BP__fig__imgCont img {
     width: 100%;
 }
 
+
 /* SECTION 2: Carroussel acteurs descriptions */
 .sec2Carrous {
     margin-left: 10%;
     background-color: var(--myDarkBlue);
+    max-width: 90%;
 }
 
+
+/* Configuration pour les petites écrans */
 .sec2Carrous__figCont {
-    display: flex;
-    align-items: center;
-    padding-left: 15px;
+    display: grid;
+    grid-template-areas: 
+        "sec2Img1 sec2Desc1"
+        "sec2Img2 sec2Desc2"
+        "sec2Img3 .";
+    max-width: 100%;
+    gap: 10px;
 }
 
-.sec2Carrous__figCont__descCont > * {
-    margin: 0 15px;
+.secImg1 {
+    grid-area: secImg1;
+}
+
+.secDesc1 {
+    grid-area: secDesc1;
+}
+
+.secImg2 {
+    grid-area: secImg2;
+}
+
+.secDesc2 {
+    grid-area: secDesc2;
+}
+
+.secImg3 {
+    grid-area: secImg3;
+}
+
+
+/* Media queries */
+@media screen and (min-width: 900px) {
+    .sec2Carrous__figCont {
+        grid-template-areas: 
+            "sec2Img1 sec2Desc1 sec2Img2 sec2Desc2 sec2Img3";
+        column-gap: 15px;
+        grid-template-columns: 0.8fr 1fr 0.8fr 1fr 0.8fr;
+        margin-left: 2%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sec2Carrous__figCont {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+}
+
+.sec2Carrous__figCont__descCont {
+    margin: 10px 0;
 }
 
 .sec2Carrous__figCont__fig__imgCont img{
- max-height: 250px;
-}
+    max-height: 250px;
+   }
+
+/* Hover zoom sur les personnages */
+.sec2Carrous__figCont__fig__imgCont img:hover{
+       transform: scale(110%);
+      }
 
 
 /* SECTION 3 : Article principal et Aside */
 .sec3PrincAs {
     margin: 75px 10%;
-    display:grid;
-    grid-template-columns: 2fr 1fr; 
-    column-gap: 3%;
 }
+
+/* Media queries */
+@media screen and (min-width: 700px) {
+    .sec3PrincAs {
+        display:grid;
+        grid-template-columns: 2fr 1fr; 
+        column-gap: 3%;
+    }
+}
+
 /* Article principale */
 .sec3PrincAs__artP {
     margin: 40px 5% 0;
@@ -211,13 +335,6 @@ nav {
     justify-content: space-between;
 }
 
-.sec3PrincAs__as__fig__descDiv {
-    background-color: var(--myWhite);
-    border-radius: 10px;
-    color: black;
-    padding: 160px 10% 75px;
-}
-
 /* Donner au conteneur une hauteur plus petit que l'image et ajouter un z-index */
 .sec3PrincAs__as__fig__imgCont{
     text-align: center;
@@ -227,6 +344,14 @@ nav {
 .sec3PrincAs__as__fig__imgCont img {
     width: 250px;
     z-index: 1;
+}
+
+/* Contenu principal aside */
+.sec3PrincAs__as__fig__descDiv {
+    background-color: var(--myWhite);
+    border-radius: 10px;
+    color: black;
+    padding: 160px 10% 75px;
 }
 
 .sec3PrincAs__as__fig__descDiv > *,
@@ -245,7 +370,7 @@ nav {
     list-style: none;
 }
 
-/* Boutons aside */
+/* Boutons violets dans Aside */
 .sec3PrincAs__as__fig__descDiv__btn ul {
     display: flex;
     justify-content: space-between;
@@ -267,6 +392,7 @@ nav {
     font-weight: bold;
 }
 
+/* Image de black panther dans la partie inférieure de Aside */
 .sec3PrincAs__as__botfig img {
     max-width: 100%
 }
@@ -299,13 +425,16 @@ nav {
 }
 
 .sec4FormSec__form h2  {
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 10px;
 }
 
 .sec4FormSec__form p{
     font-size: 12px;
+    margin: 0 10px;
 }
+
+/* Formatage des input et textarea du formulaire */
 .sec4FormSec__form input {
     /* width: 520px;
     height: 56px; trop grand */
@@ -338,7 +467,23 @@ textarea {
     font-family: cantarell;
 }
 
-/* Boutons submit */
+/* Media queries pour réduire les marges du formulaire pour les petites écrans */
+@media screen and (max-width: 600px) {
+    .sec4FormSec__form input {
+        width: 100%;
+        height: 30px;
+        border-radius: 10px;
+        padding: 5px 15px;
+    }
+
+    .sec4FormSec__form textarea {
+        width: 100%;
+        border-radius: 10px;
+        padding: 5px 15px;
+    }
+}
+
+/* Boutons submit du formulaire */
 button {
     /* width: 174px;
     height: 54px; trop grand */
@@ -352,25 +497,38 @@ button {
 }
 
 .submitBtn:hover {
-    filter: drop-shadow(0 0 20px var(--myDarkBlue)) ;
-    cursor: pointer;
+    filter: drop-shadow(0 0 10px var(--mySoftPink)) ;
 }
 
-.enigmeBtn:hover {
-    filter: drop-shadow(0 0 15px var(--mySoftPink)) ;
-}
+/* Popup Box après soumission du formulaire (avec un peu de JavaScript)*/
+#popupBox {
+    display: none;
+    padding: 20px;
+    background-color:#3d2da691;
+    color: white;
+    margin: 15px;
+    border-radius: 38px;
+  }
+  
+  /* Popup Box The close X button */
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .closebtn:hover {
+    color: black;
+  }
+
 
 /* FOOTER */
-footer {
-    background: url(../Assets/Illustrations_Logo/All_pages/back_footer.png) no-repeat;
-    background-size: 100% 100%;
-    border: solid 1px transparent
-}
-
-.footerDiv {
-    margin: 100px 10% 50px;
-}
-
+/* Typographie du footer */
 .footerDiv p, 
 .footerDiv a,
 .footerDiv li {
@@ -388,12 +546,41 @@ footer h3 {
     margin: 5px 0 10px;
 }
 
-/* Définition des grilles */
+footer {
+    background: url(../Assets/Illustrations_Logo/All_pages/back_footer.png) no-repeat;
+    background-size: 100% 100%;
+    border: solid 1px transparent;
+}
+
+.footerDiv {
+    margin: 100px 10% 50px;
+}
+
+/* Media queries pour les petites écrans */
+@media screen and (max-width: 700px) {
+    .footerDiv {
+        margin: 100px 10px 50px;
+    }
+
+    .findUs figure{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .findUs img {
+        width: 5vw;
+    }
+    
+}
+
+/* Définition d'une grille pour le positionnement des parties du footer*/
 .footerDiv {
     display: grid;
     grid-template-areas: 
         "logo logo pages findUs"
         "logo logo pol pol";
+    gap: 15px;
 }
 
 .logo {
@@ -413,31 +600,33 @@ footer h3 {
 }
 
 /* Propriété de chaque élément du footer */
-
-/* Pour vérification
-footer * {
-    border: solid 1px black;
-} */
-
 .logo {
 display: flex;
 justify-content: center;
 }
 
 .logo__imgCont {
-    width: 250px;
-    height: 250px;
-    max-width: 100%;
+    width: 25vw;
+    height: 25vw;
+    min-width: 150px;
+    min-height: 150px;
     background: url(../Assets/Illustrations_Logo/All_pages/footer1.png) no-repeat;
     background-size: contain;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 .logo__imgCont__img {
     position: relative;
-    right: 20px;
+    right: 2vw;
+    width: 12vw;
+    min-width: 75px;
+}
+
+.logo__imgCont:hover {
+    transform: scale(110%);
 }
 
 .findUs {
@@ -446,11 +635,18 @@ justify-content: center;
     justify-content: top;
     align-items: center;
 }
+
 .findUs img {
-    max-width: 40px;
+    max-width: 60px;
     margin: 0 5px;
 }
 
-/* Icônes réseaux sociaux latéral gauche */
+.findUs img:hover {
+    transform: scale(110%);
+}
+
+
+
+
 
 
