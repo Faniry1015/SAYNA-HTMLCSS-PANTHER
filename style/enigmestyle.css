@@ -76,10 +76,6 @@
 
 
 /* SECTION 2 : Section Principale et formulaire */
-.sec2En {
-    margin: 10vw 10% 10vw 15%;
-}
-
 .sec2En h2 {
     font-family: "Wakanda Forever";
     font-size: 30px;
@@ -95,7 +91,7 @@
 .sec2En {
     display: flex;
     flex-direction: column;
-    margin-right: 10%;
+    margin: 10vw 10% 10vw 15%;
 }
 
 /* Définition d'une grille pour placer les éléments sur les grands écrans*/
@@ -150,6 +146,7 @@ dd {
 /* Mise en page à l'intérieur des grilles */
 
 .sec2En__formCont textarea {
+    color: var(--mySoftPink);
     border-color: var(--mySoftPink);
     width: 100%;
     margin: 2% 0 10%;
@@ -182,13 +179,29 @@ dd {
 }
 
 /* Popup Box après soumission du formulaire (avec un peu de JavaScript)*/
-#popupBox {
+#EnigPopupBox {
     display: none;
     padding: 20px;
     background-color:#3d2da691;
     color: white;
     margin: 15px;
     border-radius: 38px;
+  }
+
+  /* Popup Box The close X button */
+  .EnigClosebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .EnigClosebtn:hover {
+    color: black;
   }
 
 .sec2En__art{

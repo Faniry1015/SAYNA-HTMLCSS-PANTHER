@@ -131,7 +131,7 @@ p {
 
 /* Animation slidein à l'ouverture de la page */
 
-/* @keyframes slidein {
+@keyframes slidein {
     from {
         margin-right: 100%;
         width: 0%;
@@ -147,7 +147,7 @@ p, img, ul, img, h1, h2 {
     overflow: hidden;
     animation-duration: 3s;
     animation-name: slidein;
-  } */
+  }
 
 
 /* HEADER */
@@ -215,7 +215,7 @@ header {
 /* MAIN */
 /* SECTION 1: Black Panther */
 .sec1BP {
-    margin: 50px 0 20px 10%;
+    margin: 50px 5% 20px 10%;
 }
 
 /* media queries */
@@ -285,13 +285,13 @@ header {
 
 
 /* Media queries */
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
     .sec2Carrous__figCont {
         grid-template-areas: 
             "sec2Img1 sec2Desc1 sec2Img2 sec2Desc2 sec2Img3";
-        column-gap: 15px;
-        grid-template-columns: 0.8fr 1fr 0.8fr 1fr 0.8fr;
-        margin-left: 2%;
+        column-gap: 10px;
+        grid-template-columns: 0.6fr 1.2fr 0.6fr 1.2fr 0.6fr;
+        margin-left: 5%;
     }
 }
 
@@ -299,12 +299,13 @@ header {
     .sec2Carrous__figCont {
         display: flex;
         flex-direction: column;
-        margin: 10px;
+        margin-left: 10%;
     }
 }
 
 .sec2Carrous__figCont__descCont {
     margin: 10px 0;
+    padding-right: 10%;
 }
 
 .sec2Carrous__figCont__fig__imgCont img{
@@ -319,7 +320,7 @@ header {
 
 /* SECTION 3 : Article principal et Aside */
 .sec3PrincAs {
-    margin: 75px 10%;
+    margin: 75px 5% 75px 10%;
 }
 
 /* Media queries */
@@ -354,7 +355,7 @@ header {
 }
 
 .sec3PrincAs__as__fig__imgCont img {
-    width: 250px;
+    max-width: 250px;
     z-index: 1;
 }
 

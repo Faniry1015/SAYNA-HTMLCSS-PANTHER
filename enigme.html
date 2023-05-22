@@ -200,15 +200,15 @@
                         </label>
                         <br>
                         <textarea name="Réponse" id="reponse" cols="30" rows="1"
-                            placeholder="Réponse" required>Réponse</textarea>
+                            placeholder="Réponse" required></textarea>
                     </div>
 
                     <div class="sec2En__formCont__subBtnCont">
-                        <button type="submit" class="submitBtn" class="submitBtnForm">ENVOYER</button>
+                        <button type="submit" id="EnigSubmitBtnForm">ENVOYER</button>
                     </div>
                     <!-- Message d'alerte pour l'envoi du formulaire -->
-                    <div class="alert" id="popupBox">
-                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    <div class="alert" id="EnigPopupBox">
+                        <span class="EnigClosebtn" onclick="this.parentElement.style.display='none';">&times;</span>
                         Merci! Votre Réponse a bien été enregistrée
                     </div>
                 </form>
@@ -262,8 +262,8 @@
         </div>
 
     </footer>
-    <!-- SCRIPT pour le popupBox dans la SECTION 4 :Formulaire -->
-    <script src="script/script.js"></script>
+    <!-- SCRIPT pour le popupBox dans la Formulaire -->
+    <script src="script/enigScript.js"></script>
 
 </body>
 
