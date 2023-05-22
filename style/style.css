@@ -30,7 +30,7 @@
 
 @font-face {
     font-family: "Wakanda forever";
-    src: url(../Assets/Polices/wakanda4ever/Wakanda4Ever-gxg5p.ttf);
+    src: url(../Assets/Polices/Wakanda_Forever/WakandaForever-Regular.ttf);
 }
 
 @font-face {
@@ -40,7 +40,7 @@
 
 html {
     font-family: Cantarell;
-    font-size: 13px;   /* 16px trop grand */
+    font-size: 14px;   /* 16px trop grand */
     text-align: justify;
     color: var(--myWhite);
 }
@@ -50,18 +50,20 @@ h1 {
     font-size: 45px;  /* 68px trop grand */
     color: var(--mySoftViolet);
     margin: 10px 0;
+    text-align: left;
 }
 
 h2 {
     font-family: Beyno;
     font-size: 20px;  /* 32px trop grand */
     color: var(--mySoftViolet);
+    text-align: left;
 }
 
 blockquote,
 blockquote p{
     font-family: Cantarell;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 header li a {
@@ -98,25 +100,25 @@ p {
 
 .reseauxSoc table{
     border-collapse: collapse;
-    border-left: var(--mySoftViolet) 2px solid;
+    border-left: var(--mySoftViolet) 3px solid;
 }
 
 .reseauxSoc__TraitSupDiv {
-    height:150px ;
-    border-right: var(--mySoftViolet) 2px solid;
+    height:200px ;
+    border-right: var(--mySoftViolet) 3px solid;
 
 }
 
 .reseauxSoc__iconCont {
-    display: flex;
-    width: 15px;
-    height:175px ;
+    display: flex; 
+    width: 20px;
+    height:200px ;
 }
 
 .reseauxSoc__iconCont__iconDiv {
     position: relative;
-    left: 3px;
-    height:175px ;
+    left: 8px;
+    height:200px ;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -129,7 +131,7 @@ p {
 
 /* Animation slidein à l'ouverture de la page */
 
-@keyframes slidein {
+/* @keyframes slidein {
     from {
         margin-right: 100%;
         width: 0%;
@@ -145,9 +147,9 @@ p, img, ul, img, h1, h2 {
     overflow: hidden;
     animation-duration: 3s;
     animation-name: slidein;
-  }
+  } */
 
-  
+
 /* HEADER */
 header {
     margin: 25px 10%;
@@ -168,7 +170,10 @@ header {
 
 .header__nav {
     width: 30%;
+    min-width: fit-content;
 }
+
+
 
 .header__nav ul{
     height: 100%;
@@ -177,6 +182,13 @@ header {
     align-items: center;
     flex-wrap: wrap;
 
+}
+
+@media screen and (max-width: 500px) {
+    .header__nav ul{
+        flex-direction: column;
+        align-items: flex-start;
+}
 }
 
 .header__nav li {
@@ -218,7 +230,7 @@ header {
         width: 40%;
     }
 
-    .sec1BP__fig__imgCont {
+    .sec1BP__imgCont {
         width: 60%;
     }
 }
@@ -227,7 +239,7 @@ header {
     margin-left: 15px
 }
 
-.sec1BP__fig__imgCont img {
+.sec1BP__imgCont img {
     width: 100%;
 }
 
@@ -377,10 +389,14 @@ header {
 }
 
 .sec3PrincAs__as__fig__descDiv__btn ul li {
-    background-color: var(--myViolet);
+    background-color: #3d2da6c4;
     padding: 5px 10px;
     border-radius: 5px;
     margin: 2px;
+}
+
+.sec3PrincAs__as__fig__descDiv__btn ul li:hover {
+    background-color: var(--myViolet);
 }
 
 .sec3PrincAs__as__fig__descDiv a{
@@ -484,7 +500,7 @@ textarea {
 }
 
 /* Boutons submit du formulaire */
-button {
+.sec4FormSec__form button {
     /* width: 174px;
     height: 54px; trop grand */
     width: 125px;
@@ -553,7 +569,7 @@ footer {
 }
 
 .footerDiv {
-    margin: 100px 10% 50px;
+    margin: 200px 10% 50px;
 }
 
 /* Media queries pour les petites écrans */
@@ -581,6 +597,18 @@ footer {
         "logo logo pages findUs"
         "logo logo pol pol";
     gap: 15px;
+}
+
+/* Media Query pour les très petites écrans */
+@media screen and (max-width: 400px) {
+    .footerDiv {
+        display: grid;
+        grid-template-areas: 
+            "logo logo"
+            "pages findUs" 
+            "pol pol";
+        gap: 15px;
+    }
 }
 
 .logo {
@@ -629,6 +657,10 @@ justify-content: center;
     transform: scale(110%);
 }
 
+.pages a:hover {
+    text-decoration: underline;
+}
+
 .findUs {
     display: flex;
     flex-direction: column;
@@ -643,6 +675,11 @@ justify-content: center;
 
 .findUs img:hover {
     transform: scale(110%);
+}
+
+.pol {
+    display: flex;
+    align-items: center;
 }
 
 
