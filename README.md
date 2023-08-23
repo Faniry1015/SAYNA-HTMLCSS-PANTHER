@@ -1,5 +1,5 @@
 # SAYNA-HTMLCSS-PANTHER
 
-Projet Black Panther réalisé dans le cadre de l'évaluation du module HTML/CSS chez SAYNA
+Black Panther for my first HTML/CSS Evaluation with SAYNA
 
 Par RANDRIAHARIMINO Faniriantsoa
